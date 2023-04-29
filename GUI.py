@@ -8,6 +8,7 @@ from datetime import date
 from datetime import timedelta
 import mysql.connector as con
 import random
+from botAI import *
 
 #All Required Packages Are Imported
 
@@ -98,7 +99,7 @@ def AddBooks():
     
     root = custom.CTk()
     root.geometry("700x480+580+275")
-    root.resizable(False,False)
+    root.resizable(0,0)
     root.title("Add Record")
     
     title = custom.CTkLabel(root, text="ADDING NEW BOOKS", font= custom.CTkFont(size=18, weight= "bold"))
@@ -194,7 +195,7 @@ def DeleteBooks():
     
     root = custom.CTk()
     root.geometry("550x250+680+435")
-    root.resizable(False,False)
+    root.resizable(0,0)
     root.configure(bg = "azure")
     root.title("Delete Record")
     
@@ -249,7 +250,7 @@ def Search():
         search_window = custom.CTk()
         search_window.title("Results Found")
         search_window.geometry("600x365+680+470")
-        search_window.resizable(False,False)
+        search_window.resizable(0,0)
 
         # Create a table to display the search results
         table = ttk.Treeview(search_window)
@@ -305,7 +306,7 @@ def SearchRecord():
 
     root = custom.CTk()
     root.geometry("700x580+600+250")
-    root.resizable(False,False)
+    root.resizable(0,0)
     root.title("Search Record")
 
     title = custom.CTkLabel(root, text="SEARCH BOOKS", font= custom.CTkFont(size=18, weight= "bold"))
@@ -398,7 +399,7 @@ def IssueRecord():
 
     root = custom.CTk()
     root.geometry("620x580+600+250")
-    root.resizable(False,False)
+    root.resizable(0,0)
     root.title("Issue Record")
 
     title = custom.CTkLabel(root, text="ISSUED BOOKS", font= custom.CTkFont(size=18, weight= "bold"))
@@ -476,7 +477,7 @@ def ReturnRecord():
 
     root = custom.CTk()
     root.geometry("620x580+600+250")
-    root.resizable(False,False)
+    root.resizable(0,0)
     root.title("Return Record")
 
     title = custom.CTkLabel(root, text="RETURNED BOOKS", font= custom.CTkFont(size=18, weight= "bold"))
@@ -603,7 +604,7 @@ def ReturnBooks():
 
     root = custom.CTk()
     root.geometry("660x500+650+275")
-    root.resizable(False,False)
+    root.resizable(0,0)
     root.title("Return Book")
     
     title = custom.CTkLabel(root, text="RETURN A BOOK", font= custom.CTkFont(size=18, weight= "bold"))
@@ -705,7 +706,7 @@ def Iss():
                     i_id.delete(0,'end')
                     root = custom.CTk()
                     root.geometry("650x400+650+270")
-                    root.resizable(False,False)
+                    root.resizable(0,0)
                     root.title("Issue")
                     custom.CTkLabel(root, text = "ISSUE DETAILS",font=custom.CTkFont(size=18)).place(x=250,y=25)
                     
@@ -758,7 +759,7 @@ def IssueBooks():
 
     root = custom.CTk()
     root.geometry("550x250+650+275")
-    root.resizable(False,False)
+    root.resizable(0,0)
     root.title("Issue RBook")
     
     title = custom.CTkLabel(root, text="ISSUE A BOOK", font= custom.CTkFont(size=18, weight= "bold"))
@@ -877,7 +878,7 @@ def Main():
     
     display = custom.CTk()
     display.geometry("800x500+510+195")
-    display.resizable(False,False)
+    display.resizable(0,0)
     display.title("Dashboard")
     
     title = custom.CTkLabel(display, text="ePUSTAKALAY", text_color='orange', font=custom.CTkFont(size=34, weight="bold", family="Times New Roman"))
@@ -1028,7 +1029,7 @@ def Register():
     
     app = custom.CTk()
     app.geometry("800x380+510+290")
-    app.resizable(False,False)
+    app.resizable(0,0)
     app.title("Registration")
     
     title = custom.CTkLabel(app, text="STUDENT REGISTRATION", font= custom.CTkFont(family="Times New Roman",size=18, weight= "bold"))
@@ -1081,18 +1082,15 @@ def Register():
     
     reg = custom.CTkButton(app, text="Register!",  command=Reg,font=custom.CTkFont(size=14), hover_color="green", width=100)
     reg.place(x=185,y=300)
-
     app.mainloop() 
     
 def Window():
     
     display.withdraw()
     global window
-    
-    
     window = custom.CTk()
     window.geometry("800x480+510+290")
-    window.resizable(False,False)
+    window.resizable(0,0)
     window.title("StudentPanel")
     
     title = custom.CTkLabel(window, text="ePUSTAKALAY", text_color= 'orange', font= custom.CTkFont(family="Times New Roman",size=18, weight= "bold", ))
@@ -1114,6 +1112,16 @@ def Window():
 
     b3 = custom.CTkButton(window, text="Return Book", command=ReturnBooks,  font= custom.CTkFont(size=16,family="Times New Roman"), width=100)
     b3.place(x=530,y=170)
+    
+    f1 = custom.CTkFrame(window, height=220,width=500)
+    f1.place(x=150,y=230)
+    
+    title =custom.CTkLabel(f1, text="Book-Worm-Zone", font= custom.CTkFont(family="Times New Roman",size=20, weight= "bold"))
+    title.place(x=175,y=25)
+    title =custom.CTkLabel(f1, text="Getting Bored? Go Get Some Books...", font= custom.CTkFont(family="Times New Roman",size=16))
+    title.place(x=140,y=65)
+    bot = custom.CTkButton(f1, text = "Explore" ,command=Bot ,font= custom.CTkFont(family="Times New Roman",size=16),width=100, fg_color= "#00A67E", hover_color="#00A67E")
+    bot.place(x=200,y=145)
         
     window.mainloop()
     
@@ -1121,12 +1129,11 @@ def WindowAdmin():
     
     global window
     display.withdraw()
-
     Reset()
     
     window = custom.CTk()
     window.geometry("800x480+510+290")
-    window.resizable(False,False)
+    window.resizable(0,0)
     window.title("AdminPanel")
     
     title = custom.CTkLabel(window, text="ePUSTAKALAY", text_color= 'orange', font= custom.CTkFont(family="Times New Roman",size=18, weight= "bold", ))
@@ -1148,7 +1155,6 @@ def WindowAdmin():
     b4.place(x=235,y=240)
     b5 = custom.CTkButton(window, text="Return Records", command=ReturnRecord,  font= custom.CTkFont(size=16,family="Times New Roman"), width=120)
     b5.place(x=440,y=240)
-    
     window.mainloop()  
-
+    
 Main()
