@@ -1,16 +1,18 @@
 # ePustakalay2.0
 A GUI for Library Management System using CTK_Custom-Tkinter with MySQL
 
-## This is just the upgraded version with Dark-UI to my previous project e-Pustakalay.
+## Just the upgraded version with Dark-UI to my previous project e-Pustakalay.
 
 * Now, enables the user to Register and Login.
 
 * Marks all records up to date with user specific CourseID.
 
+* BOOK-WORM-ZONE added, that uses Google Books API to generate results.
+
 * Issue and Return to be done with a great ease.
 
-* SEARCH BOOKs added in this one.
- 
+* Search Books added in this one.
+
 
 <h4 align = "center">
 
@@ -29,7 +31,7 @@ A GUI for Library Management System using CTK_Custom-Tkinter with MySQL
  Can Easily Login and Logout
 <br>
 <br>
-<img width="596" alt="image" src="https://user-images.githubusercontent.com/112481001/235124619-331c8694-dad5-479a-834e-17e6e0083ad5.png">
+<img width="591" alt="image" src="https://user-images.githubusercontent.com/112481001/235287924-c31e25aa-f591-4302-a132-8be42114af4e.png">
 <br>
 <br>
  Newly Added, in order to Search 
