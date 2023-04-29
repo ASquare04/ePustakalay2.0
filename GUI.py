@@ -1156,5 +1156,5 @@ def WindowAdmin():
     b5 = custom.CTkButton(window, text="Return Records", command=ReturnRecord,  font= custom.CTkFont(size=16,family="Times New Roman"), width=120)
     b5.place(x=440,y=240)
     window.mainloop()  
-    
+   
 Main()
