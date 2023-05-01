@@ -578,12 +578,12 @@ def Return():
     finally:
         cursor.close()
 
-global fineImposed
-fineImposed = 0 
 
 def check_checkbox():
         if checked.get():
-            fineImposed = 500
+            global fineImposed
+            fineImposed=0
+            fineImposed = fineImposed+500
             global fine,label
             label = custom.CTkLabel(frame, text="Fine Imposed : ", font=custom.CTkFont(size=14))
             label.place(x=150,y=225)
@@ -1082,6 +1082,7 @@ def Register():
     
     reg = custom.CTkButton(app, text="Register!",  command=Reg,font=custom.CTkFont(size=14), hover_color="green", width=100)
     reg.place(x=185,y=300)
+
     app.mainloop() 
     
 def Window():
@@ -1129,6 +1130,7 @@ def WindowAdmin():
     
     global window
     display.withdraw()
+
     Reset()
     
     window = custom.CTk()
@@ -1155,6 +1157,7 @@ def WindowAdmin():
     b4.place(x=235,y=240)
     b5 = custom.CTkButton(window, text="Return Records", command=ReturnRecord,  font= custom.CTkFont(size=16,family="Times New Roman"), width=120)
     b5.place(x=440,y=240)
+    
     window.mainloop()  
-   
+
 Main()
